@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models;
+using WebApp.Models.ViewModels;
 
 namespace WebApp.Controllers
 {
