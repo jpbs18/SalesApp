@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sWgARUmrkoYw89PuzzV18viQmkPULzLjjfVZ5DwRfPcp3qPcfOfwUphj3yDr2oDuF9GHA7z70Y3I0d4s8bGJ2Q==",
+  "dgSpecHash": "0yg8IkEIXcrQSPTJyawCsKu4gRdS0LBYPVHypaRu5ZlPc9SBjqOwaVWpFlvfxhSDxEjXm9QXZKVWlqxbViCgfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\João\\Desktop\\C#Projects\\WebApp\\WebApp\\WebApp.csproj",
+  "projectFilePath": "C:\\Users\\João\\Desktop\\SalesApp\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\João\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\microsoft.aspnetcore\\2.1.7\\microsoft.aspnetcore.2.1.7.nupkg.sha512",

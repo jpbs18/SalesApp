@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\João\\Desktop\\C#Projects\\WebApp\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\João\\Desktop\\SalesApp\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\João\\Desktop\\C#Projects\\WebApp\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\João\\Desktop\\SalesApp\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\João\\Desktop\\C#Projects\\WebApp\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\João\\Desktop\\SalesApp\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\João\\Desktop\\C#Projects\\WebApp\\WebApp\\WebApp.csproj",
+        "projectPath": "C:\\Users\\João\\Desktop\\SalesApp\\WebApp\\WebApp.csproj",
         "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\João\\Desktop\\C#Projects\\WebApp\\WebApp\\obj\\",
+        "outputPath": "C:\\Users\\João\\Desktop\\SalesApp\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -107,11 +107,12 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
