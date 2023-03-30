@@ -37,7 +37,8 @@ namespace WebApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<WebAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("WebAppContext")));
+                    options.UseMySql(Configuration.GetConnectionString("WebAppContext"), builder => 
+                    builder.MigrationsAssembly("WebApp")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
