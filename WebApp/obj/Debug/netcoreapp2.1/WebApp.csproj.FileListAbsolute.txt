@@ -33,7 +33,6 @@ C:\Users\João\Desktop\C#Projects\WebApp\WebApp\bin\Debug\netcoreapp2.1\WebApp.V
 C:\Users\João\Desktop\C#Projects\WebApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.Views.pdb
 C:\Users\João\Desktop\C#Projects\WebApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.genruntimeconfig.cache
 C:\Users\João\Desktop\C#Projects\WebApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.csproj.CopyComplete
-C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.csproj.AssemblyReference.cache
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.AssemblyInfoInputs.cache
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.AssemblyInfo.cs
@@ -74,3 +73,6 @@ C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Depar
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Details.cshtml.g.cs
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Edit.cshtml.g.cs
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.cshtml.g.cs
+C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Index.cshtml.g.cs
+C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Create.cshtml.g.cs
+C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.csproj.AssemblyReference.cache
