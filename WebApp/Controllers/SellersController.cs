@@ -22,7 +22,7 @@ namespace WebApp.Controllers
         }
 
         public IActionResult Create()
-        {
+        { 
             var departments = _departmentService.FindAll();
             var viewModel = new SellerFormViewModel { Departments = departments };
             return View(viewModel);
@@ -33,6 +33,25 @@ namespace WebApp.Controllers
         public IActionResult Create(Seller seller)
         {
             _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(long? id)
+        {
+            if (id == null) return NotFound(); 
+
+            Seller seller = _sellerService.FindById(id.Value);
+
+            if (seller == null) return NotFound(); 
+
+            return View(seller);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(long id)
+        {
+            _sellerService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
     }

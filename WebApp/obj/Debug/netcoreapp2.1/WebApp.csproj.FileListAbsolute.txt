@@ -76,3 +76,4 @@ C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Depar
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Index.cshtml.g.cs
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Create.cshtml.g.cs
 C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\WebApp.csproj.AssemblyReference.cache
+C:\Users\João\Desktop\SalesApp\WebApp\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Delete.cshtml.g.cs
