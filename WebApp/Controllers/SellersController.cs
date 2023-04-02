@@ -90,7 +90,12 @@ namespace WebApp.Controllers
 
             if (seller == null) return RedirectToAction(nameof(Error), new { message = "Id not found" });
 
-            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = seller, Departments = await _departmentService.FindAllAsync() };
+            SellerFormViewModel viewModel = new SellerFormViewModel 
+            { 
+                Seller = seller, 
+                Departments = await _departmentService.FindAllAsync() 
+            };
+
             return View(viewModel);
         }
 
@@ -100,7 +105,12 @@ namespace WebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new SellerFormViewModel { Seller = seller, Departments = await _departmentService.FindAllAsync() };
+                var viewModel = new SellerFormViewModel 
+                { 
+                    Seller = seller, 
+                    Departments = await _departmentService.FindAllAsync() 
+                };
+
                 return View(viewModel);
             }
 
@@ -123,7 +133,12 @@ namespace WebApp.Controllers
 
         public IActionResult Error(string message)
         {
-            var viewModel = new ErrorViewModel { Message = message, RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier };
+            var viewModel = new ErrorViewModel 
+            { 
+                Message = message, 
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier 
+            };
+
             return View(viewModel);
         }
 

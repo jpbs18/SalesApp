@@ -37,5 +37,27 @@ namespace WebApp.Services
                 .OrderByDescending(record => record.Date)
                 .ToListAsync();
         }
+
+        public async Task<List<IGrouping<Department,SalesRecord>>> FindByDateGroupingAsync(DateTime? minDate, DateTime? maxDate)
+        {
+            var result = _context.SalesRecord.Select(record => record);
+
+            if (minDate.HasValue)
+            {
+                result = result.Where(record => record.Date >= minDate.Value);
+            }
+
+            if (maxDate.HasValue)
+            {
+                result = result.Where(record => record.Date <= maxDate.Value);
+            }
+
+            return await result
+                .Include(record => record.Seller)
+                .Include(record => record.Seller.Department)
+                .OrderByDescending(record => record.Date)
+                .GroupBy(record => record.Seller.Department)
+                .ToListAsync();
+        }
     }
 }
