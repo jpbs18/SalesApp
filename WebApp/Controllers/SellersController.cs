@@ -72,7 +72,7 @@ namespace WebApp.Controllers
         {
             if (id == null) RedirectToAction(nameof(Error), new { message = "Id not provided" });
 
-            Seller seller = _sellerService.FindById(id.Value);
+            var seller = _sellerService.FindById(id.Value);
 
             if (seller == null) return RedirectToAction(nameof(Error), new { message = "Id not found" });
 
