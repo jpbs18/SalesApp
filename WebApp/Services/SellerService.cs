@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using WebApp.Data;
 using WebApp.Models;
 using WebApp.Services.Exceptions;
@@ -16,28 +16,36 @@ namespace WebApp.Services
             _context = context;
         }
 
-        public List<Seller> FindAll() => _context.Seller.ToList();
+        public async Task<List<Seller>> FindAllAsync() => await _context.Seller.ToListAsync();
 
-        public void Insert(Seller seller)
+        public async Task InsertAsync(Seller seller)
         {
-            _context.Seller.Add(seller);
-            _context.SaveChanges();
+            _context.Add(seller);
+            await _context.SaveChangesAsync();
         }
 
-        public Seller FindById(long id) => _context.Seller
+        public async Task<Seller> FindByIdAsync(long id) => await _context.Seller
             .Include(seller => seller.Department)
-            .FirstOrDefault(seller => seller.Id == id);
+            .FirstOrDefaultAsync(seller => seller.Id == id);
 
-        public void Delete(long id)
+        public async Task DeleteAsync(long id)
         {
-            Seller seller = _context.Seller.Find(id);
-            _context.Seller.Remove(seller);
-            _context.SaveChanges();
+            try
+            {
+                Seller seller = await _context.Seller.FindAsync(id);
+                _context.Remove(seller);
+                await _context.SaveChangesAsync();
+            }
+            catch(DbUpdateException)
+            {
+                throw new IntegrityException("Can't delete seller that has sales associated");
+            }
+     
         }
 
-        public void Update(Seller receivedSeller)
+        public async Task UpdateAsync(Seller receivedSeller)
         {
-            bool sellerExists = _context.Seller.Any(seller => seller.Id == receivedSeller.Id);
+            bool sellerExists = await _context.Seller.AnyAsync(seller => seller.Id == receivedSeller.Id);
 
             if (!sellerExists)
             {
@@ -46,8 +54,8 @@ namespace WebApp.Services
 
             try
             {
-                _context.Seller.Update(receivedSeller);
-                _context.SaveChanges();
+                _context.Update(receivedSeller);
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException ex)
             {

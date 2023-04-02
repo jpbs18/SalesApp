@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using WebApp.Data;
 using WebApp.Models;
 
@@ -14,6 +16,8 @@ namespace WebApp.Services
             _context = context;
         }
 
-        public List<Department> FindAll() => _context.Department.OrderBy(dep => dep.Name).ToList();
+        public async Task<List<Department>> FindAllAsync() => await _context.Department
+            .OrderBy(dep => dep.Name)
+            .ToListAsync();
     }
 }
