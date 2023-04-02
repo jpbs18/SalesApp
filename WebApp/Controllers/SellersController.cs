@@ -2,6 +2,7 @@
 using WebApp.Models;
 using WebApp.Models.ViewModels;
 using WebApp.Services;
+using WebApp.Services.Exceptions;
 
 namespace WebApp.Controllers
 {
@@ -22,7 +23,7 @@ namespace WebApp.Controllers
         }
 
         public IActionResult Create()
-        { 
+        {
             var departments = _departmentService.FindAll();
             var viewModel = new SellerFormViewModel { Departments = departments };
             return View(viewModel);
@@ -38,11 +39,11 @@ namespace WebApp.Controllers
 
         public IActionResult Delete(long? id)
         {
-            if (id == null) return NotFound(); 
+            if (id == null) return NotFound();
 
             Seller seller = _sellerService.FindById(id.Value);
 
-            if (seller == null) return NotFound(); 
+            if (seller == null) return NotFound();
 
             return View(seller);
         }
@@ -54,5 +55,52 @@ namespace WebApp.Controllers
             _sellerService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(long? id)
+        {
+            if (id == null) return NotFound();
+
+            Seller seller = _sellerService.FindById(id.Value);
+
+            if (seller == null) return NotFound();
+
+            return View(seller);
+        }
+
+        public IActionResult Edit(long? id)
+        {
+            if (id == null) return NotFound();
+
+            Seller seller = _sellerService.FindById(id.Value);
+
+            if (seller == null) return NotFound();
+
+            var departments = _departmentService.FindAll();
+            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = seller, Departments = departments };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(long id, Seller seller)
+        {
+            if (id != seller.Id) return BadRequest();
+
+            try
+            {
+                _sellerService.Update(seller);
+            }
+            catch(NotFoundException ex)
+            {
+                return NotFound();
+            }
+            catch(DbConcurrencyException ex)
+            {
+                return BadRequest();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
