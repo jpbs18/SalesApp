@@ -34,6 +34,12 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Seller seller)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new SellerFormViewModel { Seller = seller, Departments = _departmentService.FindAll() };
+                return View(viewModel);
+            }
+
             _sellerService.Insert(seller);
             return RedirectToAction(nameof(Index));
         }
@@ -85,6 +91,12 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(long id, Seller seller)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new SellerFormViewModel { Seller = seller, Departments = _departmentService.FindAll() };
+                return View(viewModel);
+            }
+
             if (id != seller.Id) return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
 
             try
